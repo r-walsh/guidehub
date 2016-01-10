@@ -124,7 +124,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  background-color: red;\n}\n", ""]);
+	exports.push([module.id, "", ""]);
 
 	// exports
 

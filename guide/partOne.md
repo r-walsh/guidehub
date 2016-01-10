@@ -1,5 +1,4 @@
-
-## Step One: Installing dependencies, creating file structure, configuring Babel and Webpack.
+## Step One: Installing dependencies, creating file structure, configuring Webpack.
 
 ### Installing dependencies.
 To begin, create a new folder (mine will be named 'guidehub') and `cd` into that folder. Once inside run an `npm init -y` command to create your package.json. Though I won't be covering Git in this tutorial, I highly recommend running `git init` and committing and pushing regularly.

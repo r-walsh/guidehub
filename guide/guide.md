@@ -14,6 +14,7 @@
 
 ### Requirements:
 - Node/NPM
+- MongoDB
 - http-Server or live-server
-- Intermediate knowledge of Javascript, Node, MongoDB
-- Familiarity with ES2015
+- Intermediate knowledge of Javascript, Node, MongoDB, Mongoose
+- Familiarity with ES2015 syntax

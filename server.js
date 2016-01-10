@@ -1,4 +1,3 @@
-'use strict';
 // node_module and config imports
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -17,7 +16,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
-app.use(session({ secret: config.sessionSecret }));
+app.use(session({
+	  secret: config.sessionSecret
+	, resave: false
+	, saveUninitialized: false
+}));
 
 
 // passport setup
