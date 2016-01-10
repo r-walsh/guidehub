@@ -38,9 +38,11 @@ mongoose.connection.once('open', () => {
 // Routes
 import authRoutes from './server/features/auth/authRoutes';
 import userRoutes from './server/features/user/userRoutes';
+import guideRoutes from './server/features/guide/guideRoutes';
 
 authRoutes(app);
 userRoutes(app);
+guideRoutes(app);
 
 
 // Create server
