@@ -2,7 +2,7 @@ import passport from 'passport';
 
 export default function( app ) {
 	app.route('/auth/github')
-		.get(passport.authenticate('github'));
+		.get(passport.authenticate('github', { scope: 'email' }));
 
 	app.route('/auth/callback')
 		.get(passport.authenticate('github'), ( req, res ) => {

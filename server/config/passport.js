@@ -35,7 +35,16 @@ export default function( passport ) {
 			newUser.avatarUrl = profile._json.avatar_url;
 			newUser.email = profile._json.email;
 
-			return done(null, newUser);
+			newUser.save(( err, savedUser ) => {
+				if (err) {
+					return done(err);
+				}
+				
+				return done(null, savedUser);
+				
+			});
+
+			// return done(null, newUser);
 		});
 	}));
 }
