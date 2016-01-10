@@ -1,3 +1,5 @@
+import '../styles/test.less';
+
 class Main extends React.Component {
 	render() {
 		return (
