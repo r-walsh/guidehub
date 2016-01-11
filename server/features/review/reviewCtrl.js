@@ -46,12 +46,23 @@ export default {
 	  }
 
 	, deleteReview( req, res ) {
-		Review.findByIdAndRemove(req.params.reviewId, ( err, review ) => {
+		Review.findById(req.params.reviewId, ( err, review ) => {
 			if (err) {
 				return res.status(500).send(err);
 			}
 			
-			return res.status(200).send(review);
+			if (review.reviewerId !== req.user._id && (req.user.permissions.admin || req.user.permissions.moderator)) {
+				return res.status(403).send('Forbidden');
+			}
+
+			review.delete(( err, deletedReview ) => {
+				if (err) {
+					return res.status(500).send(err);
+				}
+				
+				return res.status(200).send(deletedReview);
+				
+			});
 			
 		});
 	}

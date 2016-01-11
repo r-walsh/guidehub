@@ -59,7 +59,7 @@ export default {
 				return res.status(500).send(err);
 			}
 			
-			if (req.user._id !== guide.author && (!req.user.admin || !req.user.moderator)) {
+			if (req.user._id !== guide.author && (!req.user.permissions.admin || !req.user.permissions.moderator)) {
 				return res.status(403).send('Forbidden');
 			}
 
