@@ -2,14 +2,15 @@ import Guide from './Guide.js';
 
 export default {
 	  getApprovedGuides( req, res ) {
-		Guide.find({}, ( err, guides ) => {
-			if (err) {
+		Guide.find()
+			.populate('author', 'reviews')
+			.exec()
+			.then(( guides ) => {
+				return res.status(200).send(guides);
+			})
+			.catch(( err ) => {
 				return res.status(500).send(err);
-			}
-			
-			return res.status(200).send(guides);
-			
-		});
+			});
 	  }
 
 	, postGuide( req, res ) {
@@ -29,7 +30,14 @@ export default {
 				return res.status(500).send(err);
 			}
 			
-			return res.status(200).send(guide);
+			guide.populate('author', 'reviews')
+				.exec()
+				.then(( guide ) => {
+				return res.status(200).send(guide);
+				})
+				.catch(( err ) => {
+					return res.status(500).send(err);
+				});
 			
 		});
 	  }
