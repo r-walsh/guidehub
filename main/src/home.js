@@ -1,4 +1,5 @@
 // Component imports
+import { Router, Route } from 'react-router';
 import NavBar from './components/navBar';
 import WelcomeSplash from './components/welcomeSplash';
 import LandingPageSearch from './components/landingPageSearch';
@@ -8,10 +9,11 @@ import Footer from './components/footer';
 import '../styles/main.less';
 
 // Creating the Main component
-class Main extends React.Component {
+export default class Home extends React.Component {
 	render() {
 		return (
 			<div>
+
 				<div id="wrapper">
 					<NavBar />
 					<WelcomeSplash />
@@ -19,17 +21,8 @@ class Main extends React.Component {
 				</div>
 
 				<Footer />
+				
 			</div>
 		);
 	};
 };
-
-// Render the Main component if the element has loaded
-let documentReady = () => {
-	let reactNode = document.getElementById('react-node');
-
-	if (reactNode) {
-		ReactDOM.render(<Main />, reactNode);
-	}
-};
-documentReady();

@@ -10,6 +10,6 @@ export default function( app ) {
 				return res.status(401).send('not allowed');
 			}
 
-			res.redirect('/');
+			res.redirect('/#/profile');
 		});
 }

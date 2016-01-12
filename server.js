@@ -25,6 +25,7 @@ app.use(session({
 
 // passport setup
 import passportConfig from './server/config/passport.js';
+
 passportConfig(passport);
 
 app.use(passport.initialize());
