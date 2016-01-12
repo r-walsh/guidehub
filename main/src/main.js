@@ -1,5 +1,6 @@
 // Component imports
 import NavBar from './components/navBar';
+import WelcomeSplash from './components/welcomeSplash';
 
 // Style Import for Webpack
 import '../styles/main.less';
@@ -8,10 +9,12 @@ import '../styles/main.less';
 class Main extends React.Component {
 	render() {
 		return (
-			<NavBar />
-			// <h2>Test</h2>
+			<div>
+				<NavBar />
+				<WelcomeSplash />
+			</div>
 		);
-	};
+	}
 }
 
 // Render the Main component if the element has loaded

@@ -48,11 +48,15 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _navBar = __webpack_require__(1);
+	var _navBar = __webpack_require__(4);
 
 	var _navBar2 = _interopRequireDefault(_navBar);
 
-	__webpack_require__(2);
+	var _welcomeSplash = __webpack_require__(5);
+
+	var _welcomeSplash2 = _interopRequireDefault(_welcomeSplash);
+
+	__webpack_require__(6);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -78,9 +82,12 @@
 		_createClass(Main, [{
 			key: 'render',
 			value: function render() {
-				return React.createElement(_navBar2.default, null)
-				// <h2>Test</h2>
-				;
+				return React.createElement(
+					'div',
+					null,
+					React.createElement(_navBar2.default, null),
+					React.createElement(_welcomeSplash2.default, null)
+				);
 			}
 		}]);
 
@@ -99,7 +106,10 @@
 	documentReady();
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -139,18 +149,18 @@
 							"li",
 							{ className: "nav-item" },
 							React.createElement(
-								"b",
-								null,
-								"Login"
+								"a",
+								{ href: "/" },
+								"Browse"
 							)
 						),
 						React.createElement(
 							"li",
 							{ className: "nav-item" },
 							React.createElement(
-								"b",
-								null,
-								"Browse"
+								"a",
+								{ href: "/" },
+								"Login"
 							)
 						)
 					)
@@ -164,16 +174,79 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 2 */
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WelcomeSplash = function (_React$Component) {
+		_inherits(WelcomeSplash, _React$Component);
+
+		function WelcomeSplash() {
+			_classCallCheck(this, WelcomeSplash);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeSplash).apply(this, arguments));
+		}
+
+		_createClass(WelcomeSplash, [{
+			key: "render",
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "splash-wrapper" },
+					React.createElement(
+						"article",
+						{ className: "splash-text-box" },
+						React.createElement(
+							"h1",
+							{ className: "splash-header" },
+							"Guides",
+							React.createElement("br", null),
+							"for Programming"
+						),
+						React.createElement(
+							"p",
+							{ className: "splash-text" },
+							"Step by step guides written by professionals in the industry. These guides are easy to follow, feature code snippets, and are updated regularly to utilize the latest build systems, modules, and more. Want to contribute? Sign up and start writing your own guide!"
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "splash-image-box" },
+						React.createElement("img", { src: "../assets/img/splash-code-snippet.png" })
+					)
+				);
+			}
+		}]);
+
+		return WelcomeSplash;
+	}(React.Component);
+
+	exports.default = WelcomeSplash;
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(9)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -190,21 +263,21 @@
 	}
 
 /***/ },
-/* 3 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(8)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,300,700);", ""]);
 
 	// module
-	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  background-color: #443953;\n}\n.logo {\n  display: inline-block;\n  width: 24%;\n  margin-top: .5%;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c0cfff;\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 25px;\n  margin-top: 17%;\n  color: #202022;\n  font-size: 1.15em;\n}\n", ""]);
+	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  background-color: #282c35;\n}\n.logo {\n  display: inline-block;\n  width: 200px;\n  margin-top: 7px;\n  opacity: .72;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c0cfff;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 25px;\n  margin-top: 22px;\n  color: #202022;\n  font-size: 1.15em;\n  font-weight: bold;\n}\n.nav-item a {\n  text-decoration: none;\n}\n.nav-item a:visited {\n  color: #202022;\n}\n.nav-item a:hover {\n  text-decoration: underline;\n}\n.splash-wrapper {\n  width: 85%;\n  height: 100%;\n  margin: 25px auto;\n}\n.splash-text-box {\n  box-sizing: border-box;\n  background-color: #2c3039;\n  height: 350px;\n  width: 48%;\n  border-radius: 6px;\n  display: inline-block;\n  margin-top: 20px;\n  padding: 20px 50px 0 20px;\n}\n.splash-header {\n  color: #dd8fff;\n  font-size: 2.5em;\n  margin: 10px 0 20px 0;\n  padding: 0;\n}\n.splash-text {\n  color: #c5c6ca;\n  font-size: 1.3em;\n  font-weight: bold;\n  margin: 0;\n  padding: 0;\n}\n.splash-image-box {\n  width: 48%;\n  float: right;\n}\n.splash-image-box img {\n  width: 100%;\n  margin-top: 35px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 4 */
+/* 8 */
 /***/ function(module, exports) {
 
 	/*
@@ -260,7 +333,7 @@
 
 
 /***/ },
-/* 5 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
