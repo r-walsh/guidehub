@@ -1,9 +1,9 @@
-@base: #443953;
-@secondary: #c0cfff;
-@third: #443953;
-@font: #202022;
-@lightFont: rgb(197, 198, 202);
-@headerFont: #dd8fff;
+@paleBlue: #c1cfff;
+@darkestBlue: #282c35;
+@darkBlue: #2c3039;
+@offBlack: #202022;
+@lightGrey: #c5c6ca;
+@pink: #dd8fff;
 
 .splash-wrapper {
 	width: 85%;
@@ -23,16 +23,17 @@
 }
 
 .splash-header {
-	color: @headerFont;
+	color: @pink;
 	font-size: 2.5em;
 	margin: 10px 0 20px 0;
 	padding: 0;
 }
 
 .splash-text {
-	color: @lightFont;
+	color: @lightGrey;
 	font-size: 1.3em;
 	font-weight: bold;
+	line-height: 1.35em;
 	margin: 0;
 	padding: 0;
 }
@@ -44,5 +45,6 @@
 	img {
 		width: 100%;
 		margin-top: 35px;
+		opacity: .8;
 	}
 }

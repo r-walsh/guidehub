@@ -48,15 +48,23 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _navBar = __webpack_require__(4);
+	var _navBar = __webpack_require__(7);
 
 	var _navBar2 = _interopRequireDefault(_navBar);
 
-	var _welcomeSplash = __webpack_require__(5);
+	var _welcomeSplash = __webpack_require__(8);
 
 	var _welcomeSplash2 = _interopRequireDefault(_welcomeSplash);
 
-	__webpack_require__(6);
+	var _landingPageSearch = __webpack_require__(9);
+
+	var _landingPageSearch2 = _interopRequireDefault(_landingPageSearch);
+
+	var _footer = __webpack_require__(11);
+
+	var _footer2 = _interopRequireDefault(_footer);
+
+	__webpack_require__(12);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,8 +93,14 @@
 				return React.createElement(
 					'div',
 					null,
-					React.createElement(_navBar2.default, null),
-					React.createElement(_welcomeSplash2.default, null)
+					React.createElement(
+						'div',
+						{ id: 'wrapper' },
+						React.createElement(_navBar2.default, null),
+						React.createElement(_welcomeSplash2.default, null),
+						React.createElement(_landingPageSearch2.default, null)
+					),
+					React.createElement(_footer2.default, null)
 				);
 			}
 		}]);
@@ -94,8 +108,9 @@
 		return Main;
 	}(React.Component);
 
-	// Render the Main component if the element has loaded
+	;
 
+	// Render the Main component if the element has loaded
 	var documentReady = function documentReady() {
 		var reactNode = document.getElementById('react-node');
 
@@ -109,7 +124,10 @@
 /* 1 */,
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -174,7 +192,7 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -237,16 +255,169 @@
 	exports.default = WelcomeSplash;
 
 /***/ },
-/* 6 */
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _searchBar = __webpack_require__(10);
+
+	var _searchBar2 = _interopRequireDefault(_searchBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var LandingPageSearch = function (_React$Component) {
+		_inherits(LandingPageSearch, _React$Component);
+
+		function LandingPageSearch() {
+			_classCallCheck(this, LandingPageSearch);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(LandingPageSearch).apply(this, arguments));
+		}
+
+		_createClass(LandingPageSearch, [{
+			key: "render",
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "landing-page-search" },
+					React.createElement(
+						"div",
+						{ className: "search-text-box" },
+						React.createElement(
+							"h2",
+							null,
+							"Search for a guide..."
+						),
+						React.createElement(
+							"p",
+							null,
+							"We have guides on everything programming related. Check it out."
+						)
+					),
+					React.createElement(
+						"button",
+						{ className: "home-search" },
+						"Search"
+					),
+					React.createElement(
+						"div",
+						{ className: "search-bar-wrapper-home" },
+						React.createElement(_searchBar2.default, null)
+					)
+				);
+			}
+		}]);
+
+		return LandingPageSearch;
+	}(React.Component);
+
+	exports.default = LandingPageSearch;
+	;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SearchBar = function (_React$Component) {
+		_inherits(SearchBar, _React$Component);
+
+		function SearchBar() {
+			_classCallCheck(this, SearchBar);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchBar).apply(this, arguments));
+		}
+
+		_createClass(SearchBar, [{
+			key: "render",
+			value: function render() {
+				return React.createElement("input", { className: "search-bar", placeholder: "ex. D3.js tutorial..." });
+			}
+		}]);
+
+		return SearchBar;
+	}(React.Component);
+
+	exports.default = SearchBar;
+	;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_React$Component) {
+		_inherits(Footer, _React$Component);
+
+		function Footer() {
+			_classCallCheck(this, Footer);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
+		}
+
+		_createClass(Footer, [{
+			key: "render",
+			value: function render() {
+				return React.createElement("footer", { className: "footer" });
+			}
+		}]);
+
+		return Footer;
+	}(React.Component);
+
+	exports.default = Footer;
+	;
+
+/***/ },
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(7);
+	var content = __webpack_require__(13);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -263,21 +434,21 @@
 	}
 
 /***/ },
-/* 7 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,300,700);", ""]);
 
 	// module
-	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  background-color: #282c35;\n}\n.logo {\n  display: inline-block;\n  width: 200px;\n  margin-top: 7px;\n  opacity: .72;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c0cfff;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 25px;\n  margin-top: 22px;\n  color: #202022;\n  font-size: 1.15em;\n  font-weight: bold;\n}\n.nav-item a {\n  text-decoration: none;\n}\n.nav-item a:visited {\n  color: #202022;\n}\n.nav-item a:hover {\n  text-decoration: underline;\n}\n.splash-wrapper {\n  width: 85%;\n  height: 100%;\n  margin: 25px auto;\n}\n.splash-text-box {\n  box-sizing: border-box;\n  background-color: #2c3039;\n  height: 350px;\n  width: 48%;\n  border-radius: 6px;\n  display: inline-block;\n  margin-top: 20px;\n  padding: 20px 50px 0 20px;\n}\n.splash-header {\n  color: #dd8fff;\n  font-size: 2.5em;\n  margin: 10px 0 20px 0;\n  padding: 0;\n}\n.splash-text {\n  color: #c5c6ca;\n  font-size: 1.3em;\n  font-weight: bold;\n  margin: 0;\n  padding: 0;\n}\n.splash-image-box {\n  width: 48%;\n  float: right;\n}\n.splash-image-box img {\n  width: 100%;\n  margin-top: 35px;\n}\n", ""]);
+	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  overflow: auto;\n  background-color: #282c35;\n}\n#wrapper {\n  min-height: 100%;\n  padding-bottom: 70px;\n}\n.logo {\n  display: inline-block;\n  width: 200px;\n  margin-top: 7px;\n  opacity: .72;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c1cfff;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 35px;\n  margin-top: 24px;\n  color: #202022;\n  font-size: 1.15em;\n  font-weight: bold;\n}\n.nav-item a {\n  text-decoration: none;\n}\n.nav-item a:visited {\n  color: #202022;\n}\n.nav-item a:hover {\n  text-decoration: underline;\n}\n.splash-wrapper {\n  width: 85%;\n  height: 100%;\n  margin: 25px auto;\n}\n.splash-text-box {\n  box-sizing: border-box;\n  background-color: #2c3039;\n  height: 350px;\n  width: 48%;\n  border-radius: 6px;\n  display: inline-block;\n  margin-top: 20px;\n  padding: 20px 50px 0 20px;\n}\n.splash-header {\n  color: #dd8fff;\n  font-size: 2.5em;\n  margin: 10px 0 20px 0;\n  padding: 0;\n}\n.splash-text {\n  color: #c5c6ca;\n  font-size: 1.3em;\n  font-weight: bold;\n  line-height: 1.35em;\n  margin: 0;\n  padding: 0;\n}\n.splash-image-box {\n  width: 48%;\n  float: right;\n}\n.splash-image-box img {\n  width: 100%;\n  margin-top: 35px;\n  opacity: .8;\n}\n.landing-page-search {\n  height: 150px;\n  width: 85%;\n  margin: 0 auto;\n  background-color: #c5c6ca;\n  border-radius: 10px;\n  margin-top: 40px;\n}\n.search-text-box {\n  display: inline-block;\n  height: 75%;\n  width: 350px;\n  margin: 37px 0 0 80px;\n}\n.search-text-box h2 {\n  font-size: 1.9em;\n  margin: 0;\n  padding: 0;\n}\n.search-text-box p {\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 0;\n}\n.search-bar-wrapper-home {\n  width: 325px;\n  height: 60px;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  float: right;\n}\n.home-search {\n  box-sizing: border-box;\n  float: right;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  width: 200px;\n  height: 60px;\n  border-radius: 6px;\n  border: none;\n  background-color: #4d485d;\n  color: white;\n  font-size: 1.3em;\n  cursor: pointer;\n}\n.home-search:hover {\n  background-color: #6b8dfd;\n}\n.search-bar {\n  box-sizing: border-box;\n  padding: 20px;\n  height: 60px;\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  font-size: 1.1em;\n  font-family: 'Josefin Sans', sans-serif;\n}\n::-webkit-input-placeholder {\n  /* WebKit, Blink, Edge */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:-moz-placeholder {\n  /* Mozilla Firefox 4 to 18 */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n::-moz-placeholder {\n  /* Mozilla Firefox 19+ */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n:-ms-input-placeholder {\n  /* Internet Explorer 10-11 */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:placeholder-shown {\n  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */\n  font-family: 'Josefin Sans', sans-serif;\n}\n.footer {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  height: 70px;\n  width: 100%;\n  background-color: #202022;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 8 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/*
@@ -333,7 +504,7 @@
 
 
 /***/ },
-/* 9 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

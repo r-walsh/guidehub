@@ -1,6 +1,8 @@
 // Component imports
 import NavBar from './components/navBar';
 import WelcomeSplash from './components/welcomeSplash';
+import LandingPageSearch from './components/landingPageSearch';
+import Footer from './components/footer';
 
 // Style Import for Webpack
 import '../styles/main.less';
@@ -10,12 +12,17 @@ class Main extends React.Component {
 	render() {
 		return (
 			<div>
-				<NavBar />
-				<WelcomeSplash />
+				<div id="wrapper">
+					<NavBar />
+					<WelcomeSplash />
+					<LandingPageSearch />
+				</div>
+
+				<Footer />
 			</div>
 		);
-	}
-}
+	};
+};
 
 // Render the Main component if the element has loaded
 let documentReady = () => {
@@ -24,5 +31,5 @@ let documentReady = () => {
 	if (reactNode) {
 		ReactDOM.render(<Main />, reactNode);
 	}
-}
+};
 documentReady();
