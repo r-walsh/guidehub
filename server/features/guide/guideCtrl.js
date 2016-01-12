@@ -5,15 +5,21 @@ export default {
 		Guide.find()
 			.populate('author', 'reviews')
 			.exec()
-			.then(( guides ) => {
+			.then(( guides, err ) => {
+				if (err) {
+					return res.status(500).send(err);
+				}
+				
 				return res.status(200).send(guides);
-			})
-			.catch(( err ) => {
-				return res.status(500).send(err);
+
 			});
 	  }
 
 	, postGuide( req, res ) {
+		if (!req.user) {
+			return res.status(401).send('Unauthorized, please log in.');
+		}
+		
 		new Guide(req.body).save(( err, guide ) => {
 			if (err) {
 				return res.status(500).send(err);
@@ -32,23 +38,36 @@ export default {
 			
 			guide.populate('author', 'reviews')
 				.exec()
-				.then(( guide ) => {
-				return res.status(200).send(guide);
-				})
-				.catch(( err ) => {
-					return res.status(500).send(err);
+				.then(( guide, err ) => {
+					if (err) {
+						return res.status(500).send(err);
+					}
+					
+					return res.status(200).send(guide);
+
 				});
 			
 		});
 	  }
 
 	, updateGuide( req, res ) {
-		Guide.findByIdAndUpdate(req.params.guideId, req.body, ( err, guide ) => {
+		Guide.findById(req.params.guideId, ( err, guide ) => {
 			if (err) {
 				return res.status(500).send(err);
 			}
+
+			if (req.user._id !== guide.author) {
+				return res.status(403).send('Forbidden');
+			}
 			
-			return res.status(200).send(guide);
+			guide.update(req.body, ( err, updatedGuide ) => {
+				if (err) {
+					return res.status(500).send(err);
+				}
+				
+				return res.status(200).send(guide);
+
+			});
 			
 		});
 	  }
@@ -81,6 +100,10 @@ export default {
 				return res.status(500).send(err);
 			}
 			
+			if (!req.user.permissions.admin || !req.user.permissions.moderator) {
+				return res.status(403).send('Forbidden');
+			}
+
 			guide.set('approved', req.body.approved)
 				.save(( err, updatedGuide ) => {
 					if (err) {

@@ -1,13 +1,20 @@
-import '../styles/test.less';
+// Component imports
+import NavBar from './components/navBar';
 
+// Style Import for Webpack
+import '../styles/main.less';
+
+// Creating the Main component
 class Main extends React.Component {
 	render() {
 		return (
-			<h2>Test</h2>
+			<NavBar />
+			// <h2>Test</h2>
 		);
-	}
+	};
 }
 
+// Render the Main component if the element has loaded
 let documentReady = () => {
 	let reactNode = document.getElementById('react-node');
 
@@ -15,5 +22,4 @@ let documentReady = () => {
 		ReactDOM.render(<Main />, reactNode);
 	}
 }
-
 documentReady();
