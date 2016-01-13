@@ -1,7 +1,13 @@
+import NavBar from './components/navBar';
+import Footer from './components/footer.js';
+
 export default class Admin extends React.Component {
 	render() {
 		return (
-			<p>Admin</p>
+			<div>
+				<NavBar />
+				<Footer />
+			</div>
 		);
 	};
 };

@@ -1,7 +1,13 @@
+import NavBar from './components/navBar';
+import Footer from './components/footer.js';
+
 export default class SearchResults extends React.Component {
 	render() {
 		return (
-			<p>Results</p>
-		)
-	}
-}
+			<div>
+				<NavBar />
+				<Footer />
+			</div>
+		);
+	};
+};
