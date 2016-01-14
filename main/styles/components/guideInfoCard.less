@@ -1,0 +1,53 @@
+@import './colors.less';
+
+.guide-info-wrapper {
+	box-sizing: border-box;
+	width: 65%;
+	height: 100px;
+	margin: 30px auto;
+	border: 2px solid @darkBlue;
+}
+
+.difficulty-bar {
+	position: absolute;
+	height: 10px;
+	background-color: #ff0037;
+	background: -webkit-linear-gradient(left, #55e32a, #ff0037);
+	background: -o-linear-gradient(left, #55e32a, #ff0037);
+	background: -moz-linear-gradient(left, #55e32a, #ff0037);
+	background: linear-gradient(left, #55e32a, #ff0037);
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+	bottom: 0;
+	left: 0;
+}
+
+.guide-info-card {
+	position: relative;
+	height: 100px;
+	margin: 0 auto;
+	padding: 15px;
+	background-color: @lightGrey;
+	color: @offBlack;
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+
+.card-section {
+	width: 33%;
+	float: left;
+}
+
+.underline {
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.info-header {
+	margin: 10px;
+}
+
+.info-author, .tags-list {
+	margin-left: 10px;
+}

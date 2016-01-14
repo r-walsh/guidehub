@@ -1,5 +1,5 @@
 import NavBar from './components/navBar';
-import Footer from './components/footer.js';
+import Footer from './components/footer';
 
 export default class Browse extends React.Component {
 	render() {

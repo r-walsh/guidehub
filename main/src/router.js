@@ -1,7 +1,7 @@
 // Component imports
 import { Router, Route, Redirect } from 'react-router';
-import Home from './home.js';
-import Profile from './profile.js';
+import Home from './home';
+import Profile from './profile';
 import SearchResults from './searchResults';
 import Moderator from './moderator';
 import Admin from './admin';
