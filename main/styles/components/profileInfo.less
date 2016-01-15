@@ -3,13 +3,14 @@
 .profile-info-container {
 	width: 20%;
 	height: 400px;
-	margin: 50px 0 0 15%;
+	margin: 50px 0 0 12%;
 	color: @lightGrey;
+	display: inline-block;
 }
 
 .profile-image-wrapper {
-	width: 90%;
-	margin: 5px auto;
+	width: 80%;
+	margin: 10px auto;
 
 	img {
 		width: 100%;
@@ -19,8 +20,17 @@
 
 .name-info-container {
 	box-sizing: border-box;
-	margin-left: 5%;
+	margin-left: 7.5%;
 	padding: 5px;
+}
+
+.display-name {
+	margin-bottom: 10px;
+}
+
+.username {
+	font-weight: lighter;
+	font-size: 1.35em;
 }
 
 .profile-guide-info {
@@ -31,6 +41,11 @@
 	tr i {
 		margin-top: 7px;
 		font-size: 1em;
+		opacity: .8;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 
 	tr .fa-pencil {
@@ -47,5 +62,18 @@
 }
 
 .guide-info-number {
-	font-size: 2em;
+	font-size: 1.8em;
+
+	a {
+		color: @lightGrey;
+		text-decoration: none;
+
+		&:visited {
+			color: @lightGrey;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }

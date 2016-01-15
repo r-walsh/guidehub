@@ -24416,6 +24416,14 @@
 
 	var _profileInfo2 = _interopRequireDefault(_profileInfo);
 
+	var _tabsList = __webpack_require__(233);
+
+	var _tabsList2 = _interopRequireDefault(_tabsList);
+
+	var _guideInfoCard = __webpack_require__(220);
+
+	var _guideInfoCard2 = _interopRequireDefault(_guideInfoCard);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24441,6 +24449,8 @@
 					null,
 					React.createElement(_navBar2.default, null),
 					React.createElement(_profileInfo2.default, null),
+					React.createElement(_tabsList2.default, null),
+					React.createElement(_guideInfoCard2.default, { author: 'Ryan Walsh', title: 'GuideHub', favorites: '97', difficulty: '75%' }),
 					React.createElement(_footer2.default, null)
 				);
 			}
@@ -24451,6 +24461,28 @@
 
 	exports.default = Profile;
 	;
+
+	// renderTabContent() {
+	//     switch( this.state.selectedTab ) {
+	//         case "myGuides":
+	//             return <MyGuides />;
+	//         case "starredGuides":
+	//             return <StarredGuides />;
+	//         case "settings":
+	//             return <Settings />;
+	//     }
+	// }
+
+	// <Tabs>
+	//     <TabList>
+	//         <Tab>My Guides</Tab>
+	//         <Tab>Starred Guides</Tab>
+	//         <Tab>Settings</Tab>
+	//     </TabList>
+	//     <TabContent>
+	//         {this.renderTabContent()}
+	//     </TabContent>
+	// </Tabs>
 
 /***/ },
 /* 219 */
@@ -24564,10 +24596,14 @@
 								React.createElement(
 									"span",
 									{ className: "underline" },
-									"Title:"
+									"Title"
 								),
-								" ",
-								this.props.title
+								": ",
+								React.createElement(
+									"span",
+									{ className: "info-value" },
+									this.props.title
+								)
 							),
 							React.createElement(
 								"p",
@@ -24575,10 +24611,14 @@
 								React.createElement(
 									"span",
 									{ className: "underline" },
-									"Author:"
+									"Author"
 								),
-								" ",
-								this.props.author
+								": ",
+								React.createElement(
+									"span",
+									{ className: "info-value" },
+									this.props.author
+								)
 							)
 						),
 						React.createElement(
@@ -24590,8 +24630,9 @@
 								React.createElement(
 									"span",
 									{ className: "underline" },
-									"Tags:"
-								)
+									"Tags"
+								),
+								":"
 							),
 							React.createElement(
 								"p",
@@ -24604,33 +24645,41 @@
 							{ className: "card-section" },
 							React.createElement(
 								"h3",
-								{ className: "info-header info-favorites" },
-								React.createElement(
-									"span",
-									{ className: "underline" },
-									"Favorites:"
-								),
-								" ",
-								this.props.favorites
-							),
-							React.createElement(
-								"h3",
 								{ className: "info-header info-rating" },
 								React.createElement(
 									"span",
 									{ className: "underline" },
-									"Rating:"
+									"Rating"
 								),
-								" ",
-								React.createElement("i", { className: "fa fa-star" }),
-								" ",
-								React.createElement("i", { className: "fa fa-star" }),
-								" ",
-								React.createElement("i", { className: "fa fa-star" }),
-								" ",
-								React.createElement("i", { className: "fa fa-star" }),
-								" ",
-								React.createElement("i", { className: "fa fa-star-o" })
+								": ",
+								React.createElement(
+									"span",
+									{ className: "info-value" },
+									React.createElement("i", { className: "fa fa-star" }),
+									" ",
+									React.createElement("i", { className: "fa fa-star" }),
+									" ",
+									React.createElement("i", { className: "fa fa-star" }),
+									" ",
+									React.createElement("i", { className: "fa fa-star" }),
+									" ",
+									React.createElement("i", { className: "fa fa-star-o" })
+								)
+							),
+							React.createElement(
+								"h3",
+								{ className: "info-header info-favorites" },
+								React.createElement(
+									"span",
+									{ className: "underline" },
+									"Favorites"
+								),
+								": ",
+								React.createElement(
+									"span",
+									{ className: "info-value" },
+									this.props.favorites
+								)
 							)
 						),
 						React.createElement("div", { style: { width: this.props.difficulty }, className: "difficulty-bar" })
@@ -24900,7 +24949,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,300,700);", ""]);
 
 	// module
-	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  background-color: #282c35;\n}\n* {\n  margin: 0;\n  padding: 0;\n}\n#wrapper {\n  min-height: 100%;\n  padding-bottom: 70px;\n}\n.logo {\n  display: inline-block;\n  width: 200px;\n  margin-top: 7px;\n  opacity: .72;\n}\n.logo:hover {\n  opacity: 1;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c1cfff;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 35px;\n  margin-top: 24px;\n  color: #202022;\n  font-size: 1.15em;\n  font-weight: bold;\n}\n.nav-item a {\n  text-decoration: none;\n  color: #202022;\n}\n.nav-item a:visited {\n  color: #202022;\n}\n.nav-item a:hover {\n  text-decoration: underline;\n}\n.splash-wrapper {\n  width: 85%;\n  height: 100%;\n  margin: 25px auto;\n}\n.splash-text-box {\n  box-sizing: border-box;\n  background-color: #2c3039;\n  height: 350px;\n  width: 48%;\n  border-radius: 6px;\n  display: inline-block;\n  margin-top: 20px;\n  padding: 20px 50px 0 20px;\n}\n.splash-header {\n  color: #dd8fff;\n  font-size: 2.5em;\n  margin: 10px 0 20px 0;\n  padding: 0;\n}\n.splash-text {\n  color: #c5c6ca;\n  font-size: 1.3em;\n  font-weight: bold;\n  line-height: 1.35em;\n  margin: 0;\n  padding: 0;\n}\n.splash-image-box {\n  width: 48%;\n  float: right;\n}\n.splash-image-box img {\n  width: 100%;\n  margin-top: 35px;\n  opacity: .8;\n}\n.landing-page-search {\n  height: 150px;\n  width: 85%;\n  margin: 0 auto;\n  background-color: #c5c6ca;\n  border-radius: 10px;\n  margin-top: 40px;\n}\n.search-text-box {\n  display: inline-block;\n  height: 75%;\n  width: 350px;\n  margin: 37px 0 0 80px;\n}\n.search-text-box h2 {\n  font-size: 1.9em;\n  margin: 0;\n  padding: 0;\n}\n.search-text-box p {\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 0;\n}\n.search-bar-wrapper-home {\n  width: 325px;\n  height: 60px;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  float: right;\n}\n.home-search {\n  font-family: 'Josefin Sans', sans-serif;\n  box-sizing: border-box;\n  float: right;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  width: 200px;\n  height: 60px;\n  border-radius: 6px;\n  border: 2px solid #282c35;\n  background-color: #4d485d;\n  color: white;\n  font-size: 1.2em;\n  cursor: pointer;\n}\n.home-search:hover {\n  background-color: #c1cfff;\n  color: #282c35;\n}\n.search-bar {\n  box-sizing: border-box;\n  padding: 20px;\n  height: 60px;\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  font-size: 1.1em;\n  font-family: 'Josefin Sans', sans-serif;\n}\n::-webkit-input-placeholder {\n  /* WebKit, Blink, Edge */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:-moz-placeholder {\n  /* Mozilla Firefox 4 to 18 */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n::-moz-placeholder {\n  /* Mozilla Firefox 19+ */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n:-ms-input-placeholder {\n  /* Internet Explorer 10-11 */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:placeholder-shown {\n  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */\n  font-family: 'Josefin Sans', sans-serif;\n}\n.footer {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  height: 70px;\n  width: 100%;\n  background-color: #202022;\n}\n.guide-info-wrapper {\n  box-sizing: border-box;\n  width: 65%;\n  height: 100px;\n  margin: 30px auto;\n  border: 2px solid #2c3039;\n}\n.difficulty-bar {\n  position: absolute;\n  height: 10px;\n  background-color: #ff0037;\n  background: -webkit-linear-gradient(left, #55e32a, #ff0037);\n  background: -o-linear-gradient(left, #55e32a, #ff0037);\n  background: -moz-linear-gradient(left, #55e32a, #ff0037);\n  background: linear-gradient(left, #55e32a, #ff0037);\n  border-bottom-left-radius: 6px;\n  border-bottom-right-radius: 6px;\n  border-top-right-radius: 6px;\n  bottom: 0;\n  left: 0;\n}\n.guide-info-card {\n  position: relative;\n  height: 100px;\n  margin: 0 auto;\n  padding: 15px;\n  background-color: #c5c6ca;\n  color: #202022;\n  border-radius: 6px;\n  box-sizing: border-box;\n}\n.card-section {\n  width: 33%;\n  float: left;\n}\n.underline {\n  text-decoration: underline;\n  margin-right: 10px;\n}\n.info-header {\n  margin: 10px;\n}\n.info-author,\n.tags-list {\n  margin-left: 10px;\n}\n.results-header {\n  color: #dd8fff;\n  width: 100px;\n  margin: 50px 0 0 17.5%;\n  padding: 0;\n}\n.profile-info-container {\n  width: 20%;\n  height: 400px;\n  margin: 50px 0 0 15%;\n  color: #c5c6ca;\n}\n.profile-image-wrapper {\n  width: 90%;\n  margin: 5px auto;\n}\n.profile-image-wrapper img {\n  width: 100%;\n  border-radius: 5px;\n}\n.name-info-container {\n  box-sizing: border-box;\n  margin-left: 5%;\n  padding: 5px;\n}\n.profile-guide-info {\n  width: 80%;\n  margin: 15px auto;\n  text-align: center;\n}\n.profile-guide-info tr i {\n  margin-top: 7px;\n  font-size: 1em;\n}\n.profile-guide-info tr .fa-pencil {\n  color: #c1cfff;\n}\n.profile-guide-info tr .fa-heart {\n  color: #ff4040;\n}\n.profile-guide-info tr .fa-eye {\n  color: #32cdb3;\n}\n.guide-info-number {\n  font-size: 2em;\n}\n", ""]);
+	exports.push([module.id, ".html,\nbody {\n  font-family: 'Josefin Sans', sans-serif;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  background-color: #282c35;\n}\n* {\n  margin: 0;\n  padding: 0;\n}\n#wrapper {\n  min-height: 100%;\n  padding-bottom: 70px;\n}\n.logo {\n  display: inline-block;\n  width: 200px;\n  margin-top: 7px;\n  opacity: .72;\n}\n.logo:hover {\n  opacity: 1;\n}\n.nav-bar {\n  height: 65px;\n  background-color: #c1cfff;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}\n.nav-list {\n  list-style-type: none;\n  display: inline-block;\n  float: right;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n.nav-item {\n  float: right;\n  margin-right: 35px;\n  margin-top: 24px;\n  color: #202022;\n  font-size: 1.15em;\n  font-weight: bold;\n}\n.nav-item a {\n  text-decoration: none;\n  color: #202022;\n}\n.nav-item a:visited {\n  color: #202022;\n}\n.nav-item a:hover {\n  text-decoration: underline;\n}\n.splash-wrapper {\n  width: 85%;\n  height: 100%;\n  margin: 25px auto;\n}\n.splash-text-box {\n  box-sizing: border-box;\n  background-color: #2c3039;\n  height: 350px;\n  width: 48%;\n  border-radius: 6px;\n  display: inline-block;\n  margin-top: 20px;\n  padding: 20px 50px 0 20px;\n}\n.splash-header {\n  color: #dd8fff;\n  font-size: 2.5em;\n  margin: 10px 0 20px 0;\n  padding: 0;\n}\n.splash-text {\n  color: #c5c6ca;\n  font-size: 1.3em;\n  font-weight: bold;\n  line-height: 1.35em;\n  margin: 0;\n  padding: 0;\n}\n.splash-image-box {\n  width: 48%;\n  float: right;\n}\n.splash-image-box img {\n  width: 100%;\n  margin-top: 35px;\n  opacity: .8;\n}\n.landing-page-search {\n  height: 150px;\n  width: 85%;\n  margin: 0 auto;\n  background-color: #c5c6ca;\n  border-radius: 10px;\n  margin-top: 40px;\n}\n.search-text-box {\n  display: inline-block;\n  height: 75%;\n  width: 350px;\n  margin: 37px 0 0 80px;\n}\n.search-text-box h2 {\n  font-size: 1.9em;\n  margin: 0;\n  padding: 0;\n}\n.search-text-box p {\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 0;\n}\n.search-bar-wrapper-home {\n  width: 325px;\n  height: 60px;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  float: right;\n}\n.home-search {\n  font-family: 'Josefin Sans', sans-serif;\n  box-sizing: border-box;\n  float: right;\n  display: inline-block;\n  margin: 45px 50px 0 0;\n  width: 200px;\n  height: 60px;\n  border-radius: 6px;\n  border: 2px solid #282c35;\n  background-color: #4d485d;\n  color: white;\n  font-size: 1.2em;\n  cursor: pointer;\n}\n.home-search:hover {\n  background-color: #c1cfff;\n  color: #282c35;\n}\n.search-bar {\n  box-sizing: border-box;\n  padding: 20px;\n  height: 60px;\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  font-size: 1.1em;\n  font-family: 'Josefin Sans', sans-serif;\n}\n::-webkit-input-placeholder {\n  /* WebKit, Blink, Edge */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:-moz-placeholder {\n  /* Mozilla Firefox 4 to 18 */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n::-moz-placeholder {\n  /* Mozilla Firefox 19+ */\n  font-family: 'Josefin Sans', sans-serif;\n  opacity: 1;\n}\n:-ms-input-placeholder {\n  /* Internet Explorer 10-11 */\n  font-family: 'Josefin Sans', sans-serif;\n}\n:placeholder-shown {\n  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */\n  font-family: 'Josefin Sans', sans-serif;\n}\n.footer {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  height: 70px;\n  width: 100%;\n  background-color: #202022;\n}\n.guide-info-wrapper {\n  box-sizing: border-box;\n  width: 65%;\n  height: 100px;\n  margin: 30px auto;\n  border: 2px solid #2c3039;\n}\n.difficulty-bar {\n  position: absolute;\n  height: 10px;\n  background-color: #ff0037;\n  background: -webkit-linear-gradient(left, #55e32a, #ff0037);\n  background: -o-linear-gradient(left, #55e32a, #ff0037);\n  background: -moz-linear-gradient(left, #55e32a, #ff0037);\n  background: linear-gradient(left, #55e32a, #ff0037);\n  border-bottom-left-radius: 6px;\n  border-bottom-right-radius: 6px;\n  border-top-right-radius: 6px;\n  bottom: 0;\n  left: 0;\n}\n.guide-info-card {\n  position: relative;\n  height: 100px;\n  margin: 0 auto;\n  padding: 15px;\n  background-color: #c5c6ca;\n  color: #202022;\n  border-radius: 6px;\n  box-sizing: border-box;\n}\n.card-section {\n  width: 33%;\n  float: left;\n}\n.underline {\n  text-decoration: underline;\n}\n.info-header {\n  margin: 10px;\n}\n.info-value {\n  margin-left: 10px;\n}\n.info-author,\n.tags-list {\n  margin-left: 10px;\n}\n.results-header {\n  color: #dd8fff;\n  width: 100px;\n  margin: 50px 0 0 17.5%;\n  padding: 0;\n}\n.profile-info-container {\n  width: 20%;\n  height: 400px;\n  margin: 50px 0 0 12%;\n  color: #c5c6ca;\n  display: inline-block;\n}\n.profile-image-wrapper {\n  width: 80%;\n  margin: 10px auto;\n}\n.profile-image-wrapper img {\n  width: 100%;\n  border-radius: 5px;\n}\n.name-info-container {\n  box-sizing: border-box;\n  margin-left: 7.5%;\n  padding: 5px;\n}\n.display-name {\n  margin-bottom: 10px;\n}\n.username {\n  font-weight: lighter;\n  font-size: 1.35em;\n}\n.profile-guide-info {\n  width: 80%;\n  margin: 15px auto;\n  text-align: center;\n}\n.profile-guide-info tr i {\n  margin-top: 7px;\n  font-size: 1em;\n  opacity: .8;\n}\n.profile-guide-info tr i:hover {\n  opacity: 1;\n}\n.profile-guide-info tr .fa-pencil {\n  color: #c1cfff;\n}\n.profile-guide-info tr .fa-heart {\n  color: #ff4040;\n}\n.profile-guide-info tr .fa-eye {\n  color: #32cdb3;\n}\n.guide-info-number {\n  font-size: 1.8em;\n}\n.guide-info-number a {\n  color: #c5c6ca;\n  text-decoration: none;\n}\n.guide-info-number a:visited {\n  color: #c5c6ca;\n}\n.guide-info-number a:hover {\n  text-decoration: underline;\n}\n.tabsList {\n  float: right;\n  width: 60%;\n  margin: 60px 8% 0 0;\n  border-bottom: 1px solid #c5c6ca;\n}\n.tab {\n  float: left;\n  margin-left: 15px;\n  padding: 10px;\n  background-color: #c5c6ca;\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n  opacity: .75;\n  cursor: pointer;\n}\n.selected-tab {\n  opacity: 1;\n}\n", ""]);
 
 	// exports
 
@@ -25278,17 +25327,41 @@
 							React.createElement(
 								"th",
 								{ className: "guide-info-number" },
-								"12"
+								React.createElement(
+									"span",
+									{ className: "profile-authored" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										"12"
+									)
+								)
 							),
 							React.createElement(
 								"th",
 								{ className: "guide-info-number" },
-								"20"
+								React.createElement(
+									"span",
+									{ className: "profile-favorites" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										"20"
+									)
+								)
 							),
 							React.createElement(
 								"th",
 								{ className: "guide-info-number" },
-								"47"
+								React.createElement(
+									"span",
+									{ className: "profile-followers" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										"47"
+									)
+								)
 							)
 						),
 						React.createElement(
@@ -25297,17 +25370,41 @@
 							React.createElement(
 								"td",
 								null,
-								React.createElement("i", { className: "fa fa-pencil" })
+								React.createElement(
+									"span",
+									{ className: "profile-authored" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										React.createElement("i", { className: "fa fa-pencil" })
+									)
+								)
 							),
 							React.createElement(
 								"td",
 								null,
-								React.createElement("i", { className: "fa fa-heart" })
+								React.createElement(
+									"span",
+									{ className: "profile-favorites" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										React.createElement("i", { className: "fa fa-heart" })
+									)
+								)
 							),
 							React.createElement(
 								"td",
 								null,
-								React.createElement("i", { className: "fa fa-eye" })
+								React.createElement(
+									"span",
+									{ className: "profile-followers" },
+									React.createElement(
+										"a",
+										{ href: "/profile" },
+										React.createElement("i", { className: "fa fa-eye" })
+									)
+								)
 							)
 						)
 					)
@@ -25319,6 +25416,70 @@
 	}(React.Component);
 
 	exports.default = ProfileInfo;
+	;
+
+/***/ },
+/* 232 */,
+/* 233 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TabsList = function (_React$Component) {
+		_inherits(TabsList, _React$Component);
+
+		function TabsList() {
+			_classCallCheck(this, TabsList);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(TabsList).apply(this, arguments));
+		}
+
+		_createClass(TabsList, [{
+			key: "render",
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "tabsList" },
+					React.createElement(
+						"div",
+						{ className: "selected-tab tab" },
+						"In Progress"
+					),
+					React.createElement(
+						"div",
+						{ className: "tab" },
+						"Favorited"
+					),
+					React.createElement(
+						"div",
+						{ className: "tab" },
+						"Authored"
+					),
+					React.createElement(
+						"div",
+						{ className: "tab" },
+						"Settings"
+					)
+				);
+			}
+		}]);
+
+		return TabsList;
+	}(React.Component);
+
+	exports.default = TabsList;
 	;
 
 /***/ }
